@@ -27,6 +27,7 @@
         enable = true;
         shellAliases = {
             btw = "echo hello from home.nix";
+	    unc = "git --git-dir=\"$HOME/nixos-config/.git\" --work-tree=\"/etc/nixos/\"";
             nrs = "sudo nixos-rebuild switch";
         };
         profileExtra = ''
