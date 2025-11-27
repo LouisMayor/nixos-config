@@ -18,17 +18,23 @@
 			cd $rofi_dir
 			git clone --depth=1 https://github.com/adi1090x/rofi.git
 		fi
-
-		# todo - dotfiles
 		'';
-    }; 
+	# todo - dotfiles
+    };
 
     programs.bash = {
         enable = true;
         shellAliases = {
             btw = "echo hello from home.nix";
-	    unc = "git --git-dir=\"$HOME/nixos-config/.git\" --work-tree=\"/etc/nixos/\"";
+            unc = "git --git-dir=\"$HOME/nixos-config/.git\" --work-tree=\"/etc/nixos/\"";
             nrs = "sudo nixos-rebuild switch";
+	    usrconf = "cd $HOME/.config/";
+	    nixconf = "cd /etc/nixos/";
+        };
+	# https://mynixos.com/home-manager/option/home.sessionVariables
+	sessionVariables = {
+            usrconf = "$HOME/.config/";
+	    nixconf = "/etc/nixos/";
         };
         profileExtra = ''
             if [-z "$WAYLAND_DISPLAY"] && ["$XDG_VTNR" = 1]; then
@@ -50,7 +56,7 @@
     home.packages = with pkgs; [
     	# cli utils
 	gh
-        bat
+	bat
 	fzf
 	rofi
 	# fonts
