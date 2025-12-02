@@ -27,7 +27,7 @@
         shellAliases = {
             btw = "echo hello from home.nix";
             unc = "git --git-dir=\"$HOME/nixos-config/.git\" --work-tree=\"/etc/nixos/\"";
-            nrs = "sudo nixos-rebuild switch";
+            nrs = "sudo nixos-rebuild switch --flake $usrconf/nixos-config/";
 	    vim = "nvim";
 	    usrconf = "cd $HOME/.config/";
 	    nixconf = "cd /etc/nixos/";
