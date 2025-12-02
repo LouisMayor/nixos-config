@@ -26,16 +26,15 @@
         enable = true;
         shellAliases = {
             btw = "echo hello from home.nix";
-            unc = "git --git-dir=\"$HOME/nixos-config/.git\" --work-tree=\"/etc/nixos/\"";
-            nrs = "sudo nixos-rebuild switch --flake $usrconf/nixos-config/";
+            nrs = "sudo nixos-rebuild switch --flake $HOME/.config/nixos/";
 	    vim = "nvim";
 	    usrconf = "cd $HOME/.config/";
-	    nixconf = "cd /etc/nixos/";
+	    nixconf = "cd $HOME/.config/nixos/";
         };
 	# https://mynixos.com/home-manager/option/home.sessionVariables
 	sessionVariables = {
             usrconf = "$HOME/.config/";
-	    nixconf = "/etc/nixos/";
+	    nixconf = "$HOME/.config/nixos/";
         };
         profileExtra = ''
             if [-z "$WAYLAND_DISPLAY"] && ["$XDG_VTNR" = 1]; then
