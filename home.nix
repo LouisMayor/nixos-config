@@ -73,6 +73,9 @@
 				set smarttab
 			'';
 		};
+		tmux = {
+			enable = true;
+		};
     };
 
     
