@@ -14,9 +14,9 @@
 				mkdir $rofi_dir
 			fi
 
-			if [ -n "$(ls -A "$rofi_dir")" ]; then
+			if [ -z "$(ls -A "$rofi_dir")" ]; then
 				cd $rofi_dir
-				git clone --depth=1 https://github.com/adi1090x/rofi.git
+				${pkgs.git}/bin/git clone --depth=1 https://github.com/adi1090x/rofi.git
 			fi
 		'';
 		# create directory to store git repos
@@ -74,6 +74,12 @@
 			'';
 		};
 		tmux = {
+			enable = true;
+		};
+		rofi = {
+			enable = true;
+		};
+		git = {
 			enable = true;
 		};
     };
