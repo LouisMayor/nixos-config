@@ -37,7 +37,6 @@
        	 	shellAliases = {
        	 	    btw = "echo hello from home.nix";
        	 	    nrs = "sudo nixos-rebuild switch --flake $HOME/.config/nixos/";
-       	 	    vim = "nvim";
        	 	    usrconf = "cd $HOME/.config/";
        	 	    nixconf = "cd $HOME/.config/nixos/";
        	 	};
@@ -64,7 +63,9 @@
 		};
 		# already enabled system-wide
 		neovim = {
-			enable = true;
+			enable	 = true;
+			vimAlias = true;
+			viAlias	 = true;
 			# basic config - would be overridden by dotfile config later
 			extraConfig = ''
 				set number relativenumber
