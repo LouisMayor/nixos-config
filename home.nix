@@ -18,7 +18,16 @@
 				cd $rofi_dir
 				git clone --depth=1 https://github.com/adi1090x/rofi.git
 			fi
-			'';
+		'';
+		# create directory to store git repos
+		# https://github.com/bobwhitelock/dotfiles/blob/master/bin/clone - interesting
+		setup_git_folder = lib.hm.dag.entryAfter ["writeBoundary"] ''
+			git_dir="$HOME/git/"
+			if [ ! -d "$git_dir" ]; then
+				mkdir $git_dir
+			fi
+		'';
+
 		# todo - dotfiles
     };
 
