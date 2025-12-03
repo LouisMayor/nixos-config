@@ -83,8 +83,6 @@
     	# cli utils
 		gh
 		bat
-		fzf
-		rofi
 		# fonts
 		nerd-fonts.caskaydia-cove
 		nerd-fonts.iosevka
