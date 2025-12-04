@@ -55,12 +55,6 @@
     		enable = true;
 			enableBashIntegration = true;
 		};
-		firefox = {
-			enable = true;
-		};
-		alacritty = {
-			enable = true;
-		};
 		# already enabled system-wide
 		neovim = {
 			enable	 = true;
@@ -74,15 +68,12 @@
 				set smarttab
 			'';
 		};
-		tmux = {
-			enable = true;
-		};
-		rofi = {
-			enable = true;
-		};
-		git = {
-			enable = true;
-		};
+		tmux 		= {	enable = true; };
+		rofi 		= {	enable = true; };
+		git 		= {	enable = true; };
+		firefox 	= {	enable = true; };
+		alacritty 	= {	enable = true; };
+		direnv		= {	enable = true; };
     };
 
     
