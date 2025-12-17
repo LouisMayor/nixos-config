@@ -34,6 +34,7 @@
     programs = {
     	bash = {
        		enable = true;
+			enableCompletion = true;
        	 	shellAliases = {
        	 	    btw = "echo hello from home.nix";
        	 	    nrs = "sudo nixos-rebuild switch --flake $HOME/.config/nixos/";
@@ -50,6 +51,8 @@
        	 	        exec hyprland
        	 	    fi
        	 	'';
+			bashrcExtra = ''
+			'';
 		};
     	fzf = {
     		enable = true;
@@ -73,7 +76,10 @@
 		git 		= {	enable = true; };
 		firefox 	= {	enable = true; };
 		alacritty 	= {	enable = true; };
-		direnv		= {	enable = true; };
+		direnv	= {	
+			enable = true;
+			enableBashIntegration = true;
+		};
     };
 
     

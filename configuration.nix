@@ -28,6 +28,11 @@ in
   # Use latest kernel.
   boot.kernelPackages = pkgs.linuxPackages_latest;
 
+  # GPU
+  hardware.graphics.enable = true;
+  services.xserver.videoDrivers = [ "nvidia" ];
+  hardware.nvidia.open = false;
+
   networking.hostName = "louis-nixos"; # Define your hostname.
   # networking.wireless.enable = true;  # Enables wireless support via wpa_supplicant.
 
