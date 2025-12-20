@@ -82,6 +82,9 @@ in
   # Enable CUPS to print documents.
   services.printing.enable = true;
 
+  # Enable flatpak
+  services.flatpak.enable = true;
+
   # Enable sound with pipewire.
   services.pulseaudio.enable = false;
   security.rtkit.enable = true;
@@ -166,7 +169,27 @@ in
   # networking.firewall.allowedTCPPorts = [ ... ];
   # networking.firewall.allowedUDPPorts = [ ... ];
   # Or disable the firewall altogether.
-  # networking.firewall.enable = false;
+
+  networking.firewall.enable = true;
+  networking.firewall.allowedUDPPorts = [
+  	1900	# Plex DLNA
+	32410	
+	32412
+	32413
+	32414
+	8008 # Casting to devices (PlexAmp)
+	8009 # Casting to devices (PlexAmp)
+
+  ];
+  networking.firewall.allowedTCPPorts = [
+  	32400 	# Plex Media Server Port
+  	32401 	# Plex Media Server Port
+	32469 	# Plex DLNA
+	32500 	# Plex
+	32600 	# Plex
+	8008 	# Casting to devices (PlexAmp)
+	8009 	# Casting to devices (PlexAmp)
+  ];
 
   # This value determines the NixOS release from which the default
   # settings for stateful data, like file locations and database versions

@@ -1,5 +1,21 @@
 { config, pkgs, lib, ... }:
 
+# to clear old builds
+#
+# sudo nix-env --delete-generations +5 --profile /nix/var/nix/profiles/system
+# nix-store --gc
+# nix-collect-garbage -d
+# sudo nixos-rebuild boot
+#
+# sudo nix-env --list-generations --profile /nix/var/nix/profiles/system
+# ls -dv /nix/var/nix/profiles/system-* | tail -n10
+# reboot
+#
+
+#
+# sudo bootctl set-oneshot auto-windows
+#
+
 {
     home.username = "louis";
     home.homeDirectory = "/home/louis";
@@ -30,6 +46,10 @@
 
 		# todo - dotfiles
     };
+
+	services.flatpak.packages = [
+		"com.plexamp.Plexamp"
+	];
 
     programs = {
     	bash = {
@@ -84,6 +104,7 @@
 
     
     home.packages = with pkgs; [
+		cider-2
     	# cli utils
 		gh
 		bat
