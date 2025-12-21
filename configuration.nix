@@ -177,9 +177,9 @@ in
 	32412
 	32413
 	32414
-	8008 # Casting to devices (PlexAmp)
-	8009 # Casting to devices (PlexAmp)
-
+	8008 	# Casting to devices (PlexAmp)
+	8009 	# Casting to devices (PlexAmp)
+	10767	# Cider RPC server
   ];
   networking.firewall.allowedTCPPorts = [
   	32400 	# Plex Media Server Port
@@ -189,6 +189,7 @@ in
 	32600 	# Plex
 	8008 	# Casting to devices (PlexAmp)
 	8009 	# Casting to devices (PlexAmp)
+	10767	# Cider RPC server
   ];
 
   # This value determines the NixOS release from which the default
