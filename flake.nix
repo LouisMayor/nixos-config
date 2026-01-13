@@ -1,6 +1,6 @@
 {
     # https://www.youtube.com/watch?v=7QLhCgDMqgw
-    description = "hyprland on NixOS";
+    description = "flake";
     inputs = {
         nixpks.url = "nixpkgs/nixos-unstable";
         home-manager = {
